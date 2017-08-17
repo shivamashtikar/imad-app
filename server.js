@@ -6,8 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var article={ 
-    articleOne={
+var articles={ 
+    'article-one':{
         title: 'article-one | shivam ashtikar',
         heading: 'Article One',
         date: 'Aug 17, 2017',
@@ -15,14 +15,14 @@ var article={
                         this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.    this is the content for my first article.
                     </p>`
     },
-    articleTwo={
+    'article-two':{
         title: 'article-two | shivam ashtikar',
         heading: 'Article two',
         date: 'Aug 18, 2017',
         content: `<p>
                         this is the content for my second article.  
                     </p>`},
-    articleThree={
+    'article-three' :{
         title: 'article-three | shivam ashtikar',
         heading: 'Article three',
         date: 'Aug 19, 2017',
@@ -67,13 +67,15 @@ function createTemplate(data){
     `;
     return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req,res){
-
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function(req,res){
+    
+    var articleName= req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two', function(req,res){
     res.send("this is from article two and all the contents will be displayed here");
