@@ -19,8 +19,8 @@ button.onclick = function (){
       }
       //not done yet
       
-  }
+  };
   //render the variable in the correct span
   
   
-}
+}; 
