@@ -21,7 +21,7 @@ button.onclick = function (){
       
   };
   //Make the request
-  request.open('GET','http://http://lightningshivam.imad.hasura-app.io/counter',true);
+  request.open('GET','http://lightningshivam.imad.hasura-app.io/counter',true);
   request.send(null);
   
   
