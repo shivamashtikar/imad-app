@@ -4,7 +4,7 @@ var button = document.getElementById('counter');
 button.onclick = function (){
   
  
-  //make a request to the counter endpoint
+  //  make a request
   var request = new XMLHttpRequest();
   //capture the response and store it in a variable
   request.onreadystatechange = function ()  {
@@ -20,7 +20,9 @@ button.onclick = function (){
       //not done yet
       
   };
-  //render the variable in the correct span
+  //Make the request
+  request.open('GET','http://http://lightningshivam.imad.hasura-app.io/counter',true);
+  request.send(null);
   
   
 }; 
