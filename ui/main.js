@@ -27,13 +27,13 @@ button.onclick = function (){
   
 }; 
 //submit name
-var nameInput = document.getElementById("name");
+var nameInput = document.getElementById('name');
 var nameval = nameInput.value;
-var submit = document.getElementById("submit_btn");
+var submit = document.getElementById('submit_btn');
 submit.onclick = function (){
   //make a request  and send name
   //capture a list of names and render it as list
-  var names =["name1","name2","name3","name4"];
+  var names =['name1','name2','name3','name4'];
   var list = '';
   for (var i=0; i<names.length;i++){
       list += '<li>'+ names[i] +'</li>';
