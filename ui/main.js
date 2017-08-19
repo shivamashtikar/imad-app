@@ -27,10 +27,9 @@ button.onclick = function (){
   
 }; 
 //submit name
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function (){
+    
   //make a request  and send name
    //  make a request
   var request = new XMLHttpRequest();
@@ -53,6 +52,9 @@ submit.onclick = function (){
       //not done yet
       
   };
+  var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+
   //Make the request
   request.open('GET','http://lightningshivam.imad.hasura-app.io/submit-name/'+ name,true);
   request.send(null);
