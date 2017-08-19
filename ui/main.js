@@ -54,7 +54,7 @@ submit.onclick = function (){
       
   };
   //Make the request
-  request.open('GET','http://lightningshivam.imad.hasura-app.io/submit-name?name='+ name,true);
+  request.open('GET','http://lightningshivam.imad.hasura-app.io/submit-name/'+ name,true);
   request.send(null);
   //capture a list of names and render it as list
   
